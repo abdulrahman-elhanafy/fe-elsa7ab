@@ -9,7 +9,9 @@ import {
   Clapperboard,
   Heart,
   Instagram,
+  Linkedin,
   LoaderCircle,
+  Mail,
   Menu,
   Palette,
   PenTool,
@@ -17,6 +19,8 @@ import {
   Send,
   Sparkles,
   X,
+  Facebook,
+  Github,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -28,6 +32,46 @@ import studioImage from "@/assets/studio-wide.jpg";
 import coffeeImage from "@/assets/project-coffee.jpg";
 import fashionImage from "@/assets/project-fashion.jpg";
 import foodImage from "@/assets/project-food.jpg";
+
+function TikTokIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg
+      role="img"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+    >
+      <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+    </svg>
+  );
+}
+
+const COMPANY_SOCIALS = [
+  {
+    name: "Facebook",
+    label: "فيسبوك",
+    href: "https://www.facebook.com/profile.php?id=61594982158553",
+    icon: Facebook,
+  },
+  {
+    name: "Instagram",
+    label: "إنستجرام",
+    href: "https://www.instagram.com/fe_elsa7ab",
+    icon: Instagram,
+  },
+  {
+    name: "TikTok",
+    label: "تيك توك",
+    href: "https://www.tiktok.com/@fe_elsa7ab",
+    icon: TikTokIcon,
+  },
+  {
+    name: "Email",
+    label: "البريد الإلكتروني",
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=feelsahab@gmail.com",
+    icon: Mail,
+  },
+];
 
 const nav = [
   ["الرئيسية", "top"],
@@ -1010,23 +1054,28 @@ function Contact() {
               اكتب التفاصيل اللي عندك، حتى لو لسه مجرد فكرة. الفريق هيراجعها
               ويرجعلك بخطوة واضحة.
             </p>
-            <div className="mt-10 flex gap-3">
-              <Button
-                variant="outline"
-                size="icon"
-                aria-label="إنستجرام"
-                className="rounded-full border-primary-foreground/20 bg-transparent text-primary-foreground"
-              >
-                <Instagram />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                aria-label="بيهانس"
-                className="rounded-full border-primary-foreground/20 bg-transparent text-primary-foreground"
-              >
-                <span className="text-xs font-black">Bē</span>
-              </Button>
+            <div className="mt-10 flex flex-wrap items-center gap-3">
+              {COMPANY_SOCIALS.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <Button
+                    key={social.name}
+                    asChild
+                    variant="outline"
+                    size="icon"
+                    aria-label={social.label}
+                    className="rounded-full border-primary-foreground/20 bg-transparent text-primary-foreground transition-colors hover:border-secondary hover:text-secondary"
+                  >
+                    <a
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Icon className="h-4 w-4" />
+                    </a>
+                  </Button>
+                );
+              })}
             </div>
           </Reveal>
           <Reveal>
@@ -1040,21 +1089,77 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="border-t border-primary-foreground/10 bg-navy py-8 text-primary-foreground">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 text-center text-sm md:flex-row md:px-10">
-        <a href="#top" className="text-2xl font-black">
-          في السحاب ☁️
-        </a>
-        <p className="text-primary-foreground/45">
-          من الفكرة لحد أرض الواقع — كلنا فريق واحد.
-        </p>
-        <a
-          href="#top"
-          aria-label="العودة للأعلى"
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-primary-foreground/20"
+    <footer className="border-t border-primary-foreground/10 bg-navy py-10 text-primary-foreground">
+      <div className="mx-auto max-w-7xl px-5 md:px-10">
+        <div className="flex flex-col items-center justify-between gap-6 text-center text-sm md:flex-row">
+          <div className="flex flex-col items-center gap-1 md:items-start">
+            <a href="#top" className="text-2xl font-black">
+              في السحاب ☁️
+            </a>
+            <p className="text-primary-foreground/45">
+              من الفكرة لحد أرض الواقع — كلنا فريق واحد.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2">
+            {COMPANY_SOCIALS.map((social) => {
+              const Icon = social.icon;
+              return (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-primary-foreground/15 bg-primary-foreground/5 text-primary-foreground/75 transition-colors hover:border-secondary hover:text-secondary"
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              );
+            })}
+          </div>
+
+          <a
+            href="#top"
+            aria-label="العودة للأعلى"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-primary-foreground/20 transition-colors hover:border-secondary hover:text-secondary"
+          >
+            <ArrowUpLeft className="h-5 w-5" />
+          </a>
+        </div>
+
+        <div
+          dir="ltr"
+          className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-primary-foreground/10 pt-6 text-xs text-primary-foreground/60 sm:flex-row"
         >
-          <ArrowUpLeft />
-        </a>
+          <p className="flex items-center gap-1.5 font-medium">
+            <span>Created by</span>
+            <span className="font-bold text-secondary">Abdulrahman Hanafy</span>
+          </p>
+
+          <div className="flex items-center gap-3">
+            <a
+              href="https://github.com/abdulrahman-elhanafy"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Profile"
+              className="flex items-center gap-1.5 rounded-full border border-primary-foreground/15 bg-primary-foreground/5 px-3 py-1.5 transition-colors hover:border-secondary hover:text-secondary"
+            >
+              <Github className="h-3.5 w-3.5" />
+              <span>GitHub</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/abdulrahman-hanafy"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
+              className="flex items-center gap-1.5 rounded-full border border-primary-foreground/15 bg-primary-foreground/5 px-3 py-1.5 transition-colors hover:border-secondary hover:text-secondary"
+            >
+              <Linkedin className="h-3.5 w-3.5" />
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );
