@@ -1047,7 +1047,7 @@ function Contact() {
             <h2 className="mt-4 text-5xl font-black">
               احكيلنا.
               <br />
-              <br />
+              <br />  
               <span className="text-secondary">إحنا سامعينك.</span>
             </h2>
             <p className="mt-8 max-w-sm leading-8 text-primary-foreground/60">
