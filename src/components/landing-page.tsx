@@ -129,8 +129,8 @@ const steps = [
   ["01", "إنت تحكي", "نفهم البراند، الناس، والطموح."],
   ["02", "إحنا نبني", "استراتيجية واتجاه إبداعي واضح."],
   ["03", "إحنا نبدع", "تصميم، محتوى، وتصوير تحت سقف واحد."],
-  ["04", "ننطلق", "نشر، حملات، وتسويق محسوب."],
-  ["05", "نكبر", "تحليل، تطوير، وخطوة أعلى كل مرة."],
+  ["04", "إحنا نبدأ", "نشر، حملات، وتسويق محسوب."],
+  ["05", "إحنا نكبر", "تحليل، تطوير، وخطوة أعلى كل مرة."],
 ];
 const packages = [
   {
@@ -376,20 +376,19 @@ function Intro() {
           />
         </Reveal>
         <Reveal className="order-1 md:order-2">
-          <span className="text-sm font-bold text-accent">أهو ظهر!</span>
+          
           <h2 className="mt-3 font-display text-5xl font-black md:text-7xl">
-            مين سليم؟
+            أنا سليم
           </h2>
           <div className="mt-8 max-w-xl text-xl font-medium leading-10 text-foreground/75 md:text-2xl">
-            <p className="font-black text-foreground">ده سليم.</p>
             <p>مش مديرك، ومش الشخص اللي هيطلب منك تعمل meeting كل يوم.</p>
             <p className="mt-4">
-              سليم هو الوجه اللي هياخدك في رحلة بناء البراند بتاعك — من أول سكتش
+              أنا الوجه اللي هاخدك في رحلة بناء البراند بتاعك — من أول سكتش
               لحد ما الناس تشوفه وتحبه.
             </p>
           </div>
           <p className="mt-8 border-r-4 border-accent pr-4 font-bold text-primary">
-            ورا سليم فريق كامل. قدامك نقطة تواصل واحدة.
+            ورايا فريق كامل جامد كرييتف .
           </p>
         </Reveal>
       </div>
@@ -564,7 +563,7 @@ function Studio() {
           </Reveal>
           <Reveal>
             <p className="mb-14 max-w-lg text-lg leading-8 text-foreground/70">
-              عندنا مساحة إبداعية مجهزة للتصوير والفيديو، تقدر تدخلها بفكرة
+              عندنا سحابة إبداعية مجهزة للتصوير والفيديو، تقدر تدخلها بفكرة
               وتخرج منها بحملة كاملة — ومعاك فريقنا من أول الكادر لآخر مونتاج.
             </p>
           </Reveal>
@@ -572,7 +571,7 @@ function Studio() {
         <Reveal className="group relative overflow-hidden rounded-[2rem]">
           <img
             src={studioImage}
-            alt="استوديو في السحاب للتصوير وإنتاج المحتوى في القاهرة"
+            alt="استوديو في السحاب للتصوير وإنتاج المحتوى في المحله الكبرى"
             loading="lazy"
             width={1600}
             height={1008}
@@ -602,13 +601,13 @@ const projects = [
     image: coffeeImage,
     name: "نُقطة",
     type: "BRAND IDENTITY • PACKAGING",
-    copy: "حوّلنا منتج قهوة محلي لتجربة مصرية معاصرة، من الفكرة لحد آخر كوب.",
+    copy: "حوّلنا منتج قهوة محلي لتجربة عالمبه بهويه مثريه معاصرة، من الفكرة لحد آخر نقطة.",
   },
   {
     image: fashionImage,
     name: "مِشوار",
     type: "CAMPAIGN • PRODUCTION",
-    copy: "اتجاه إبداعي وحملة تصوير كاملة صنعت حضور واضح لبراند أزياء جديد.",
+    copy: "اتجاه إبداعي وحملة تصوير كاملة صنعت حضور واضح لبراند ملابس جديد.",
   },
   {
     image: foodImage,
@@ -689,7 +688,7 @@ function About() {
                 ليه صاحب البراند لازم يلف على Designer وPhotographer وMarketer
                 وPrinter وAgency عشان يعمل حاجة واحدة؟
               </p>
-              <p className="mt-8 text-primary">جمعنا كل ده تحت سقف واحد.</p>
+              <p className="mt-8 text-primary">جمعنا كل ده تحت سحابة واحد.</p>
               <div className="mt-10 flex flex-wrap gap-3 text-base">
                 <span className="rounded-full border border-accent-foreground/25 px-5 py-3">
                   فريق واحد.
@@ -1017,7 +1016,7 @@ function Contact() {
         <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-5 text-center">
           <Reveal>
             <p className="text-sm font-black text-primary">
-              وصلنا لآخر الرحلة — أو أولها؟
+              وصلنا لآخر الرحلة ولا أولها؟
             </p>
             <h2 className="mt-5 text-5xl font-black md:text-8xl">
               جاهز تطلع السحاب؟
@@ -1048,11 +1047,11 @@ function Contact() {
             <h2 className="mt-4 text-5xl font-black">
               احكيلنا.
               <br />
-              <span className="text-secondary">إحنا سامعين.</span>
+              <br />
+              <span className="text-secondary">إحنا سامعينك.</span>
             </h2>
             <p className="mt-8 max-w-sm leading-8 text-primary-foreground/60">
-              اكتب التفاصيل اللي عندك، حتى لو لسه مجرد فكرة. الفريق هيراجعها
-              ويرجعلك بخطوة واضحة.
+              اكتب أفكارك بتفاصيلها حكايتك تستاهل تتسمع
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               {COMPANY_SOCIALS.map((social) => {
