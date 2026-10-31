@@ -376,15 +376,14 @@ function Intro() {
           />
         </Reveal>
         <Reveal className="order-1 md:order-2">
-          
           <h2 className="mt-3 font-display text-5xl font-black md:text-7xl">
             أنا سليم
           </h2>
           <div className="mt-8 max-w-xl text-xl font-medium leading-10 text-foreground/75 md:text-2xl">
             <p>مش مديرك، ومش الشخص اللي هيطلب منك تعمل meeting كل يوم.</p>
             <p className="mt-4">
-              أنا الوجه اللي هاخدك في رحلة بناء البراند بتاعك — من أول سكتش
-              لحد ما الناس تشوفه وتحبه.
+              أنا الوجه اللي هاخدك في رحلة بناء البراند بتاعك — من أول سكتش لحد
+              ما الناس تشوفه وتحبه.
             </p>
           </div>
           <p className="mt-8 border-r-4 border-accent pr-4 font-bold text-primary">
@@ -713,9 +712,15 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/mbglwzby";
 
 const SERVICE_OPTIONS = [
   { value: "brand-identity", label: "Brand Identity — هوية بصرية" },
-  { value: "social-media-marketing", label: "Social Media Marketing — سوشيال ميديا" },
+  {
+    value: "social-media-marketing",
+    label: "Social Media Marketing — سوشيال ميديا",
+  },
   { value: "website-development", label: "Website Development — تطوير موقع" },
-  { value: "photography-videography", label: "Photography & Videography — تصوير وفيديو" },
+  {
+    value: "photography-videography",
+    label: "Photography & Videography — تصوير وفيديو",
+  },
   { value: "other", label: "Other — غير ذلك" },
 ];
 
@@ -745,7 +750,9 @@ function ContactForm() {
   const reduce = useReducedMotion();
 
   function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
   ) {
     setFields((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
@@ -815,7 +822,12 @@ function ContactForm() {
             <motion.div
               initial={reduce ? false : { scale: 0 }}
               animate={{ scale: 1 }}
-              transition={{ delay: 0.15, duration: 0.5, type: "spring", bounce: 0.45 }}
+              transition={{
+                delay: 0.15,
+                duration: 0.5,
+                type: "spring",
+                bounce: 0.45,
+              }}
               className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-secondary text-foreground shadow-cloud-lg"
             >
               <Heart className="h-9 w-9 fill-current" />
@@ -828,7 +840,9 @@ function ContactForm() {
               className="text-3xl font-black"
             >
               شكرًا لتواصلك معانا!{" "}
-              <span role="img" aria-label="قلب">❤️</span>
+              <span role="img" aria-label="قلب">
+                ❤️
+              </span>
             </motion.h3>
 
             <motion.p
@@ -837,8 +851,8 @@ function ContactForm() {
               transition={{ delay: 0.4, duration: 0.45 }}
               className="mt-5 max-w-sm leading-8 text-primary-foreground/65"
             >
-              وصلتنا رسالتك بنجاح، وفريقنا هيراجع تفاصيل طلبك وهنرجع نتواصل
-              معاك في أقرب وقت.
+              وصلتنا رسالتك بنجاح، وفريقنا هيراجع تفاصيل طلبك وهنرجع نتواصل معاك
+              في أقرب وقت.
               <br />
               <span className="mt-3 block font-semibold text-secondary">
                 سعداء باهتمامك بالتعاون معانا!
@@ -1047,7 +1061,7 @@ function Contact() {
             <h2 className="mt-4 text-5xl font-black">
               احكيلنا.
               <br />
-              <br />  
+              <br />
               <span className="text-secondary">إحنا سامعينك.</span>
             </h2>
             <p className="mt-8 max-w-sm leading-8 text-primary-foreground/60">
