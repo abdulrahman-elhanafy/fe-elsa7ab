@@ -305,7 +305,7 @@ function Hero() {
         <Reveal className="relative z-10">
           <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-surface/60 px-4 py-2 text-xs font-bold text-primary backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-accent" /> CREATIVE HOUSE •
-            CAIRO
+            Elmahalla Elkoubra
           </p>
           <h1 className="font-display text-[clamp(3.4rem,8vw,7.6rem)] font-black leading-[.98] text-foreground">
             خلي براندك
